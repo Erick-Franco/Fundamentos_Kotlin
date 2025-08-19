@@ -24,19 +24,72 @@ Dominar las bases de Kotlin aplicadas al desarrollo Android, incluyendo:
 
 ---
 
-## 📘 Ejercicios Incluidos
+## 📘 Ejercicios y Reflexiones
 
-| Ejercicio | Tema                        | Descripción |
-|----------|-----------------------------|-------------|
-| 1        | Variables y constantes       | Uso de `const val`, `val`, `var` y reflexión sobre inmutabilidad. |
-| 2        | Tipos numéricos              | Declaración de `Int`, `Long`, `Float`, `Double` con sufijos. |
-| 3        | `if` como expresión          | Función `calificar(nota)` que retorna "Aprobado" o "Desaprobado". |
-| 4        | `when` con rangos            | Clasificación de edades usando rangos con `in`. |
-| 5        | Bucles `while` y `for`       | Generación de tabla de multiplicar con ambos bucles. |
-| 6        | Colecciones                  | Uso de `filter`, `map`, `sumOf`, `count` sobre una lista de productos. |
-| 7        | Null Safety                  | Conversión segura de `String` a `Int` con `toIntOrNull()` y operador Elvis. |
-| 8        | Funciones puras              | Implementación de `esPrimo(n)` y `fibonacci(n)` sin efectos secundarios. |
-| 9        | Clases vs Data Class         | Comparación entre clase `Persona` y `data class Usuario`. |
+### 1️⃣ Variables y constantes
+
+- Se usaron `const val` para definir `APP_NAME` y `APP_VERSION`.
+- Se declararon variables con `var` y constantes con `val` usando tipos explícitos.
+- 🔍 **Reflexión:** `val` no puede ser reasignado porque representa una referencia inmutable. Esto mejora la seguridad del código y evita errores por cambios inesperados.
+
+---
+
+### 2️⃣ Tipos numéricos
+
+- Se trabajó con `Int`, `Long`, `Float` y `Double`, usando sufijos `L` y `f`.
+- 🔍 **Reflexión:** `Float` es útil cuando se requiere menos precisión y menor uso de memoria (por ejemplo, en sensores). `Double` es preferible para cálculos más precisos como estadísticas o finanzas.
+
+---
+
+### 3️⃣ if como expresión
+
+- Se implementó `fun calificar(nota: Int): String` usando `if` como expresión.
+- Se probó con 5 valores distintos.
+- 🔍 **Reflexión:** Usar `if` como expresión permite escribir código más conciso y expresivo, retornando directamente un valor sin necesidad de bloques adicionales.
+
+---
+
+### 4️⃣ when con rangos
+
+- Se implementó `fun clasificarEdad(edad: Int): String` usando rangos con `in`.
+- 🔍 **Reflexión:** `when` con rangos mejora la legibilidad y permite clasificaciones claras, ideal para lógica de negocio como segmentación por edad.
+
+---
+
+### 5️⃣ Bucles while y for
+
+- Se generó la tabla de multiplicar con `while` y `for`.
+- 🔍 **Reflexión:** El bucle `for` es más legible cuando se conoce el rango exacto. `while` ofrece más control cuando la condición depende de lógica interna.
+
+---
+
+### 6️⃣ Colecciones
+
+- Se creó `data class Producto` con `id`, `nombre`, `precio` y `stock`.
+- Se aplicaron `filter`, `map`, `sumOf` y `count` sobre una lista inmutable.
+- 🔍 **Reflexión:** Kotlin permite trabajar con colecciones de forma declarativa. Esto hace que el código sea más limpio, expresivo y fácil de mantener.
+
+---
+
+### 7️⃣ Null Safety en práctica
+
+- Se implementó `fun aEnteroSeguro(s: String): Int?` usando `toIntOrNull()` y operador Elvis `?:`.
+- 🔍 **Reflexión:** Kotlin ofrece herramientas poderosas para evitar errores por valores nulos. El operador Elvis permite asignar valores por defecto de forma segura.
+
+---
+
+### 8️⃣ Funciones puras
+
+- Se implementaron `fun esPrimo(n: Int): Boolean` y `fun fibonacci(n: Int): List<Int>`.
+- 🔍 **Reflexión:** Las funciones puras no dependen de estado externo ni lo modifican. Son predecibles, fáciles de testear y fundamentales para programación funcional.
+
+---
+
+### 9️⃣ Clases vs Data Class
+
+- Se creó una clase regular `Persona` con métodos personalizados.
+- Se comparó con `data class Usuario` usando `copy()` y `==`.
+- 🔍 **Reflexión:** Las `data class` generan automáticamente métodos útiles como `equals()`, `hashCode()` y `copy()`, lo que las hace ideales para representar datos. Las clases regulares ofrecen más control sobre comportamiento.
 
 ---
 
